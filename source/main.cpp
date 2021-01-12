@@ -9,12 +9,12 @@ int main()
 	Engine::Game game = Engine::Game();
 	Engine::Window window = Engine::Window("Divitiae", 1280, 720);
 
-	game.onUpdate([&] {
-		window.update();
-	});
-	
 	game.onRender([&] {
 		window.render();
+	});
+
+	game.onUpdate([&] {
+		window.update();
 	});
 
 	window.onClose([&] {

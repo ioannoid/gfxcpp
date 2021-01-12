@@ -3,8 +3,11 @@
 out vec4 FragColor;
 
 in vec4 fcolor;
+in vec2 textureCoords;
+
+uniform sampler2D tex;
 
 void main()
 {
-    FragColor = fcolor;
+    FragColor = texture(tex, textureCoords);
 } 

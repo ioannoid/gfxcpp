@@ -16,8 +16,8 @@ namespace Engine
 
 		void initGl();
 		void run();
-		void onUpdate(const std::function<void()>& update);
 		void onRender(const std::function<void()>& render);
+		void onUpdate(const std::function<void()>& update);
 		void clean();
 
 		bool isRunning();
@@ -26,7 +26,7 @@ namespace Engine
 	private:
 		bool running = false;
 
-		std::function<void()> update;
 		std::function<void()> render;
+		std::function<void()> update;
 	};
 }

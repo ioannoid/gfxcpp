@@ -13,45 +13,45 @@
 
 namespace Engine {
     class Window
-        {
-        public:
-            Window();
-            Window(const std::string& title, const int& width, const int& height);
+    {
+    public:
+        Window();
+        Window(const std::string& title, const int& width, const int& height);
 
-            Window& operator=(const Window& window);
+        Window& operator=(const Window& window);
 
-            void setContext();
-            void setViewport(int width, int height);
-            void update();
-            void render();
-            void open();
-            void close();
+        void setContext();
+        void setViewport(int width, int height);
+        void render();
+        void update();
+        void open();
+        void close();
 
-            void setScene(Scene& currentScene);
+        void setScene(Scene& currentScene);
 
-            //Events
-            
-            void registerEvents();
+        //Events
+        
+        void registerEvents();
 
-            void onClose(const std::function<void()>& callback);
-            void onResize(const std::function<void(int, int)>& callback);
-            void onFocus(const std::function<void(bool)>& callback);
+        void onClose(const std::function<void()>& callback);
+        void onResize(const std::function<void(int, int)>& callback);
+        void onFocus(const std::function<void(bool)>& callback);
 
-        private:
-            GLFWwindow* glfwWindow;
+    private:
+        GLFWwindow* glfwWindow;
 
-            int width, height;
-            std::string title;
+        int width, height;
+        std::string title;
 
-            Renderer renderer; 
-            Scene* currentScene;
+        Renderer renderer; 
+        Scene* currentScene;
 
-            std::function<void()> onCloseCallback;
-            std::function<void(int, int)> onResizeCallback;
-            std::function<void(bool)> onFocusCallback;
+        std::function<void()> onCloseCallback;
+        std::function<void(int, int)> onResizeCallback;
+        std::function<void(bool)> onFocusCallback;
 
-            static void onClose(GLFWwindow* window);
-            static void onResize(GLFWwindow* window, int width, int height);
-            static void onFocus(GLFWwindow* window, int focused);
-        };
+        static void onClose(GLFWwindow* window);
+        static void onResize(GLFWwindow* window, int width, int height);
+        static void onFocus(GLFWwindow* window, int focused);
+    };
 }

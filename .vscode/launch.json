@@ -12,7 +12,7 @@
             "args": [],
             "stopAtEntry": false,
             "preLaunchTask": "build",
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/source",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",

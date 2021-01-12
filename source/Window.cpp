@@ -29,14 +29,6 @@ namespace Engine {
 	void Window::setViewport(int width, int height) {
 		glViewport(0, 0, width, height);
 	}
-	
-	void Window::update() {
-		if (glfwWindow != nullptr) {
-			glfwPollEvents();
-			//printf("%i, %i\n", width, height);
-            currentScene->update();
-		}
-	}
 
 	void Window::render() {
 		if (glfwWindow != nullptr) {
@@ -47,7 +39,15 @@ namespace Engine {
 			glClearColor(0.0f, 1.0f, 0.5f, 1.0f);
 
 			glBindVertexArray(0);
+			glBindTexture(GL_TEXTURE_2D, 0);
 			glfwSwapBuffers(glfwWindow);
+		}
+	}
+
+	void Window::update() {
+		if (glfwWindow != nullptr) {
+			//printf("%i, %i\n", width, height);
+            currentScene->update();
 		}
 	}
 

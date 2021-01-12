@@ -12,8 +12,8 @@ class TestScene : public Engine::Scene
 public:
     TestScene ();
     
-    virtual void update();
     virtual void render();
+    virtual void update();
 private:
     Engine::Object triangle;
     Engine::Object square;

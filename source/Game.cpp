@@ -44,12 +44,12 @@ namespace Engine {
         clean();
     }
 
-    void Game::onUpdate(const std::function<void()>& update) {
-        this->update = update;
-    }
-
     void Game::onRender(const std::function<void()>& render) {
         this->render = render;
+    }
+
+    void Game::onUpdate(const std::function<void()>& update) {
+        this->update = update;
     }
 
     bool Game::isRunning() {
