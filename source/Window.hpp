@@ -53,5 +53,8 @@ namespace Engine {
         static void onClose(GLFWwindow* window);
         static void onResize(GLFWwindow* window, int width, int height);
         static void onFocus(GLFWwindow* window, int focused);
+        static void onKey(GLFWwindow* window, int key, int scancode, int action, int mods);
+        static void onMouseButton(GLFWwindow* window, int button, int action, int mods);
+        static void onMouseMove(GLFWwindow* window, double xpos, double ypos);
     };
 }

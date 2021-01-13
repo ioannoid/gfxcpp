@@ -13,9 +13,6 @@ namespace Engine
         glGenBuffers(1, &vbo);
 
         vsize = vertices.size() * sizeof(GLfloat);
-        // colorSize = color.size() * sizeof(GLfloat);
-        // textureSize = texture.size() * sizeof(GLfloat);
-        // normalSize = normal.size() * sizeof(GLfloat);
 
         glBindVertexArray(vao);
         
@@ -25,24 +22,18 @@ namespace Engine
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
         glEnableVertexAttribArray(0);
 
-        // if(colorSize) {
-        //     glBufferSubData(GL_ARRAY_BUFFER, vertexSize, colorSize, color.data());
-        //     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, static_cast<char const*>(0) + vertexSize);
-        //     glEnableVertexAttribArray(1);
-        // }
-        // if(textureSize) {
-        //     glBufferSubData(GL_ARRAY_BUFFER, vertexSize+colorSize, textureSize, texture.data());
-        //     glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, static_cast<char const*>(0) + vertexSize+colorSize);
-        //     glEnableVertexAttribArray(2);
-        // }
-        // if(normalSize) {
-        //     glBufferSubData(GL_ARRAY_BUFFER, vertexSize+colorSize+textureSize, normalSize, normal.data());
-        //     glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 0, static_cast<char const*>(0) + vertexSize+colorSize+textureSize);
-        //     glEnableVertexAttribArray(3);
-        // }
-
         glBindVertexArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
+    }
+
+    Object::~Object() {
+        glDeleteBuffers(1, &vbo);
+        glDeleteBuffers(1, &cbo);
+        glDeleteBuffers(1, &ubo);
+        glDeleteBuffers(1, &nbo);
+        glDeleteBuffers(1, &ibo);
+        glDeleteTextures(1, &texture);
+        glDeleteVertexArrays(1, &vao);
     }
 
     void Object::loadColors(const std::vector<GLfloat>& colors) {

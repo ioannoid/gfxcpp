@@ -9,18 +9,19 @@ namespace Engine {
 		this->height = height;
 	}
 
-	Window& Window::operator=(const Window& window) {
-		glfwDestroyWindow(glfwWindow);
+	// Window& Window::operator=(const Window& window) {
+	// 	glfwDestroyWindow(glfwWindow);
 
-		title = window.title;
-		width = window.width;
-		height = window.height;
+	// 	title = window.title;
+	// 	width = window.width;
+	// 	height = window.height;
 
-		onCloseCallback = window.onCloseCallback;
-		onResizeCallback = window.onResizeCallback;
+	// 	onCloseCallback = window.onCloseCallback;
+	// 	onResizeCallback = window.onResizeCallback;
+	// 	onFocus
 
-		return *this;
-	}
+	// 	return *this;
+	// }
 
 	void Window::setContext() {
 		glfwMakeContextCurrent(glfwWindow);
@@ -47,6 +48,7 @@ namespace Engine {
 	void Window::update() {
 		if (glfwWindow != nullptr) {
 			//printf("%i, %i\n", width, height);
+			glfwPollEvents();
             currentScene->update();
 		}
 	}
@@ -75,6 +77,10 @@ namespace Engine {
 	void Window::registerEvents() {
 		glfwSetWindowCloseCallback(glfwWindow, onClose);
 		glfwSetFramebufferSizeCallback(glfwWindow, onResize);
+		glfwSetWindowFocusCallback(glfwWindow, onFocus);
+		glfwSetKeyCallback(glfwWindow, onKey);
+		glfwSetMouseButtonCallback(glfwWindow, onMouseButton);
+		glfwSetCursorPosCallback(glfwWindow, onMouseMove);
 	}
 
 	void Window::onClose(const std::function<void()>& callback) {
@@ -96,14 +102,33 @@ namespace Engine {
 		Window* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
 		if (self->onCloseCallback) self->onCloseCallback();
 	}
+
 	void Window::onResize(GLFWwindow* window, int width, int height) {
 		Window* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
 		self->width = width;
 		self->height = height;
 		if (self->onResizeCallback) self->onResizeCallback(width, height);
 	}
+
 	void Window::onFocus(GLFWwindow* window, int focused) {
 		Window* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
 		if (self->onFocusCallback) self->onFocusCallback(focused);
+	}
+
+	void Window::onKey(GLFWwindow* window, int key, int scancode, int action, int mods) {
+		Window* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
+		self->currentScene->onKey(key, scancode, action, mods);
+	}
+
+	void Window::onMouseButton(GLFWwindow* window, int button, int action, int mods) {
+		Window* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
+		double xpos, ypos;
+		glfwGetCursorPos(window, &xpos, &ypos);
+		self->currentScene->onMouseButton(button, action, mods, xpos, ypos);
+	}
+
+	void Window::onMouseMove(GLFWwindow* window, double xpos, double ypos) {
+		Window* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
+		self->currentScene->onMouseMove(xpos, ypos);
 	}
 }

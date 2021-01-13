@@ -6,14 +6,13 @@
 #include <vector>
 #include <iostream>
 
-#include "Shader.hpp"
-
 namespace Engine {
     class Object
     {
     public:
         Object();
         Object(const std::vector<GLfloat>& vertices);
+        ~Object();
 
         void loadColors(const std::vector<GLfloat>& colors);
         void loadTexture(const std::vector<GLfloat>& uvs, const char* texture);

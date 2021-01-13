@@ -31,7 +31,7 @@ int main()
 	window.setContext();
 	game.initGl();
 
-	TestScene testScene;
+	TestScene testScene(game, window);
 
 	window.setScene(testScene);
 
