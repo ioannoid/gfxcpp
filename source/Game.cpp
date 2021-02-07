@@ -1,7 +1,11 @@
 #include "Game.hpp"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.hpp"
 namespace Engine {
     Game::Game() {
+        stbi_set_flip_vertically_on_load(true);
+
         if (!glfwInit()) {
             fprintf(stderr, "GLFW failed to initialize\n");
             throw std::runtime_error("GLFW failed to initialize");
@@ -33,8 +37,6 @@ namespace Engine {
     void Game::run() {
         // std::thread thread(&Engine::Game::render, this);
         // thread.detach();
-        
-
         while(running) {
             render();
             update();

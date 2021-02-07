@@ -9,7 +9,7 @@
 #include "Window.hpp"
 #include "Game.hpp"
 #include "Texture2D.hpp"
-#include "SpriteRenderer.hpp"
+#include "Sprite.hpp"
 
 class TestScene : public Engine::Scene
 {
@@ -26,11 +26,16 @@ private:
     Engine::Game& game;
     Engine::Window& window;
 
-    // Engine::Object triangle;
-    // Engine::Object square;
-    Engine::SpriteRenderer spriteRenderer;
-    Engine::Texture2D texture;
+    Engine::Texture2D pieceTexture;
+    Engine::Sprite piece;
+
+    Engine::Texture2D boardTexture;
+    Engine::Sprite board;
+
+
     Engine::Shader shader;
+
+    float currentFrame = 0;
 
     // bool lbuttondown = false;
 };

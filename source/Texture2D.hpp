@@ -8,15 +8,17 @@
 namespace Engine {
     class Texture2D {
     public:
-        friend class SpriteRenderer;
+        friend class Sprite;
 
         Texture2D();
         Texture2D(const char* texture);
         ~Texture2D();
 
+        const int& getWidth();
+        const int& getHeight();
+
     private:
         GLuint texture;
-        int width;
-        int height;
+        int width, height;
     };
 }

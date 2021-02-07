@@ -6,11 +6,19 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "g++ -Wall -Wno-unused-but-set-variable -std=c++17 -g -o build/program.out source/*.cpp `pkg-config --libs glfw3 glew`", 
+            "command": "g++ -Wall -Wno-unused-but-set-variable -std=c++17 -o build/program.out source/*.cpp `pkg-config --libs glfw3 glew`",
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build (debug)",
+            "type": "shell",
+            "command": "g++ -Wall -Wno-unused-but-set-variable -std=c++17 -g -o build/program.out source/*.cpp `pkg-config --libs glfw3 glew`",
+            "group": "build",
+            "problemMatcher": []
         }
     ]
 }

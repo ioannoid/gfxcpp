@@ -85,17 +85,17 @@ namespace Engine {
 
 	void Window::onClose(const std::function<void()>& callback) {
 		onCloseCallback = callback;
-		glfwSetWindowCloseCallback(glfwWindow, onClose);
+		if(glfwWindow != NULL) glfwSetWindowCloseCallback(glfwWindow, onClose);
 	}
 
 	void Window::onResize(const std::function<void(int, int)>& callback) {
 		onResizeCallback = callback;
-		glfwSetFramebufferSizeCallback(glfwWindow, onResize);
+		if(glfwWindow != NULL) glfwSetFramebufferSizeCallback(glfwWindow, onResize);
 	}
 
 	void Window::onFocus(const std::function<void(bool)>& callback) {
 		onFocusCallback = callback;
-		glfwSetWindowFocusCallback(glfwWindow, onFocus);
+		if(glfwWindow != NULL) glfwSetWindowFocusCallback(glfwWindow, onFocus);
 	}
 
 	void Window::onClose(GLFWwindow* window) {

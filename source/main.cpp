@@ -13,9 +13,7 @@ int main()
 		window.render();
 	});
 
-	game.onUpdate([&] {
-		window.update();
-	});
+	window.open();
 
 	window.onClose([&] {
 		window.close();
@@ -26,7 +24,9 @@ int main()
 		window.setViewport(width, height);
 	});
 
-	window.open();
+	game.onUpdate([&] {
+		window.update();
+	});
 
 	window.setContext();
 	game.initGl();

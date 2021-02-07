@@ -1,47 +1,38 @@
 #include "TestScene.hpp"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 TestScene::TestScene(Engine::Game& game, Engine::Window& window) : game(game), window(window) {
-    // triangle = Engine::Object({-.5f, -0.5f, 0.0f,
-    //                             0.5f, -0.5f, 0.0f,
-    //                             0.0f,  0.5f, 0.0f});
-    // square = Engine::Object({0.0f, -0.5f, 0.0f,
-    //                          1.0f, -0.5f, 0.0f,
-    //                          1.0f,  0.5f, 0.0f,
-    //                          1.0f,  0.5f, 0.0f,
-    //                          0.0f, -0.5f, 0.0f,
-    //                          0.0f, 0.5f, 0.0f});
-    
-    // triangle.loadTexture({0.0f, 0.0f, 1.0f, 0.0f, 0.5f, 1.0f}, "box.jpg");
-    // square.loadColors({1.0f, 0.0f, 0.0f, 1.0f,
-    //                    1.0f, 1.0f, 1.0f, 1.0f,
-    //                    0.0f, 0.0f, 1.0f, 1.0f,
-    //                    0.0f, 0.0f, 1.0f, 1.0f,
-    //                    1.0f, 0.0f, 0.0f, 1.0f,
-    //                    0.0f, 1.0f, 0.0f, 1.0f});
-    // square.loadTexture({0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f}, "box.jpg");
+    pieceTexture = Engine::Texture2D("/home/ioannis/Coding/C++/Game-Engine/build/doggy.png");
+    piece = Engine::Sprite(pieceTexture, 16, 16);
 
-    texture = Engine::Texture2D("box.jpg");
+    boardTexture = Engine::Texture2D("/home/ioannis/Coding/C++/Game-Engine/build/Board.png");
+    board = Engine::Sprite(boardTexture, 33, 33);
 
-    shader.loadVertex("shader.vert");
-    shader.loadFragment("shader.frag");
-    shader.link();
+    shader = Engine::Shader("/home/ioannis/Coding/C++/Game-Engine/build/shader.vert", "/home/ioannis/Coding/C++/Game-Engine/build/shader.frag");
 }
 
 void TestScene::render() {
     shader.use();
-    spriteRenderer.render(texture);
+    // shader.setInt("currentFrame", currentFrame);
+    // shader.setInt("frames", 10);
+    //shader.setMat("transform", board.getTransform());
+    //board.render();
+    piece.setRotation(glm::vec3(0.0f, 0.0f, 1.0f), currentFrame);
+    shader.setMat("transform", piece.getTransform());
+    piece.render();
     // triangle.render();
     // square.render();
 }
 
 void TestScene::update() {
-    //triangle.update();
+    currentFrame+=0.5;
+    if(currentFrame == 360) currentFrame = 0;
 }
 
 void TestScene::onKey(int key, int scancode, int action, int mods) {
-    if(key == GLFW_KEY_ESCAPE) { 
-        window.close();
-        game.close();
+    if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) { 
+        
     }
 }
 

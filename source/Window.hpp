@@ -8,7 +8,6 @@
 #include <string>
 #include <functional>
 
-#include "Renderer.hpp"
 #include "Scene.hpp"
 
 namespace Engine {
@@ -43,7 +42,6 @@ namespace Engine {
         int width, height;
         std::string title;
 
-        Renderer renderer; 
         Scene* currentScene;
 
         std::function<void()> onCloseCallback;

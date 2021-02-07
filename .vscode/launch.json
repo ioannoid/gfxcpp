@@ -11,7 +11,26 @@
             "program": "${workspaceFolder}/build/program.out",
             "args": [],
             "stopAtEntry": false,
-            "preLaunchTask": "build",
+            "preLaunchTask": "build (debug)",
+            "cwd": "${workspaceFolder}/source",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Debug (No Build)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/program.out",
+            "args": [],
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}/source",
             "environment": [],
             "externalConsole": false,

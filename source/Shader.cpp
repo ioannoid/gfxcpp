@@ -4,8 +4,7 @@ namespace Engine
 {
     Shader::Shader() { }
 
-    void Shader::loadVertex(const char* vertexPath)
-    {
+    Shader::Shader(const char* vertexPath, const char* fragmentPath) { 
         vertex = glCreateShader(GL_VERTEX_SHADER);
         
         std::string VertexShaderCode;
@@ -35,10 +34,7 @@ namespace Engine
             glGetShaderInfoLog(vertex, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
             printf("%s\n", &VertexShaderErrorMessage[0]);
         }
-    }
 
-    void Shader::loadFragment(const char* fragmentPath) 
-    {
         fragment = glCreateShader(GL_FRAGMENT_SHADER);
 
         std::string FragmentShaderCode;
@@ -49,9 +45,6 @@ namespace Engine
             FragmentShaderCode = sstr.str();
             FragmentShaderStream.close();
         }
-
-        GLint Result = GL_FALSE;
-	    int InfoLogLength;
 
         printf("Compiling shader : %s\n", fragmentPath);
         char const * FragmentSourcePointer = FragmentShaderCode.c_str();
@@ -66,19 +59,13 @@ namespace Engine
             glGetShaderInfoLog(fragment, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
             printf("%s\n", &FragmentShaderErrorMessage[0]);
         }
-    }
 
-    void Shader::link()
-    {
-        if(!program) program = glCreateProgram();
+        program = glCreateProgram();
 
         glAttachShader(program, vertex);
         glAttachShader(program, fragment);
 
         glLinkProgram(program);
-
-        GLint Result = GL_FALSE;
-	    int InfoLogLength;
 
         glGetProgramiv(program, GL_LINK_STATUS, &Result);
         glGetProgramiv(program, GL_INFO_LOG_LENGTH, &InfoLogLength);
@@ -98,5 +85,17 @@ namespace Engine
     void Shader::use()
     {
         glUseProgram(program);
+    }
+
+    void Shader::setInt(const char* name, const int& value) {
+        glUniform1i(glGetUniformLocation(program, name), value);
+    }
+
+    void Shader::setBool(const char* name, const bool& value) {
+        glUniform1i(glGetUniformLocation(program, name), value);
+    }
+
+    void Shader::setMat(const char* name, const glm::mat4& value) {
+        glUniformMatrix4fv(glGetUniformLocation(program, name), 1, GL_FALSE, glm::value_ptr(value));
     }
 }
