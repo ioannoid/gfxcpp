@@ -19,6 +19,13 @@
             "command": "g++ -Wall -Wno-unused-but-set-variable -std=c++17 -g -o build/program.out source/*.cpp `pkg-config --libs glfw3 glew`",
             "group": "build",
             "problemMatcher": []
-        }
+        },
+        {
+            "label": "build (windows)",
+            "type": "shell",
+            "command": "g++ -Wall -Wno-unused-but-set-variable -std=c++17 -o build/program.exe source/*.cpp -lglfw -lGLEW -lX11 -lGLU -lGL",
+            "group": "build",
+            "problemMatcher": []
+        },
     ]
 }
