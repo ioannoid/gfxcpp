@@ -21,6 +21,14 @@ namespace Engine {
         running = true;
     }
 
+    void Game::setWindow(Window& window) {
+        this->window = &window;
+    }
+
+	const Window& Game::getWindow() const {
+        return *window;
+    }
+
     void Game::initGl() {
         glewExperimental = true;
         if (glewInit() != GLEW_OK) {
@@ -37,24 +45,46 @@ namespace Engine {
     void Game::run() {
         // std::thread thread(&Engine::Game::render, this);
         // thread.detach();
-        while(running) {
-            render();
-            update();
 
+        double lastTime = glfwGetTime(), timer = lastTime;
+        double deltaTime = 0, nowTime = 0;
+        int frames = 0 , updates = 0;
+
+        while(running) {
+            nowTime = glfwGetTime();
+            deltaTime += (nowTime - lastTime) / limitUPS;
+            lastTime = nowTime;
+
+            glfwPollEvents();
+
+            while(deltaTime >= 1.0) {
+                update();
+                updates++;
+                deltaTime--;
+            }
+
+            render();
+            frames++;
+
+            if(glfwGetTime() - timer > 1.0) {
+                timer++;
+                printf("FPS: %i, UPS: %i\n", frames, updates);
+                updates = 0, frames = 0;
+            }
         }
 
         clean();
     }
 
-    void Game::onRender(const std::function<void()>& render) {
-        this->render = render;
+    void Game::update() {
+        window->update();
     }
 
-    void Game::onUpdate(const std::function<void()>& update) {
-        this->update = update;
+    void Game::render() {
+        window->render();
     }
 
-    bool Game::isRunning() {
+    bool Game::isRunning() const {
         return running;
     }
 

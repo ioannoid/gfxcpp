@@ -4,15 +4,11 @@
 #include "Window.hpp"
 #include "TestScene.hpp"
 
-int main()
-{
+int main() {
 	Engine::Game game = Engine::Game();
 	Engine::Window window = Engine::Window("Doggy Speen", 1280, 720);
 
-	game.onRender([&] {
-		window.render();
-	});
-
+	game.setWindow(window);
 	window.open();
 
 	window.onClose([&] {
@@ -24,14 +20,10 @@ int main()
 		window.setViewport(width, height);
 	});
 
-	game.onUpdate([&] {
-		window.update();
-	});
-
 	window.setContext();
 	game.initGl();
 
-	TestScene testScene(game, window);
+	TestScene testScene(game);
 
 	window.setScene(testScene);
 

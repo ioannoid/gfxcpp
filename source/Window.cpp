@@ -31,8 +31,15 @@ namespace Engine {
 		glViewport(0, 0, width, height);
 	}
 
-	void Window::render() {
+	void Window::update() {
 		if (glfwWindow != nullptr) {
+			//printf("%i, %i\n", width, height);
+            currentScene->update();
+		}
+	}
+
+	void Window::render() {
+		if (glfwWindow != nullptr && !glfwWindowShouldClose(glfwWindow)) {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			currentScene->render();
@@ -45,17 +52,9 @@ namespace Engine {
 		}
 	}
 
-	void Window::update() {
-		if (glfwWindow != nullptr) {
-			//printf("%i, %i\n", width, height);
-			glfwPollEvents();
-            currentScene->update();
-		}
-	}
-
 	void Window::open() {
 		glfwWindow = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
-		if (glfwWindow == NULL) {
+		if (glfwWindow == nullptr) {
 			fprintf(stderr, "Failed to open GLFW window. Check OpenGL compatibility");
 			glfwTerminate();
 			throw std::runtime_error("Failed to open GLFW window. Check OpenGL compatibility");

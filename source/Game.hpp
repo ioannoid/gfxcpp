@@ -7,26 +7,30 @@
 #include <iostream>
 #include <functional>
 
-namespace Engine
-{
+#include "Window.hpp"
+namespace Engine {
+	class Window;
 	class Game
 	{
 	public:
 		Game();
 
 		void initGl();
+		void setWindow(Window& window);
+		const Window& getWindow() const;
+
 		void run();
-		void onRender(const std::function<void()>& render);
-		void onUpdate(const std::function<void()>& update);
+		void update();
+		void render();
 		void clean();
 
-		bool isRunning();
+		bool isRunning() const;
 		void close();
 
 	private:
 		bool running = false;
+		Window* window;
 
-		std::function<void()> render;
-		std::function<void()> update;
+		double limitUPS = 1.0 / 60.0;
 	};
 }

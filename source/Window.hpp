@@ -11,6 +11,7 @@
 #include "Scene.hpp"
 
 namespace Engine {
+    class Scene;
     class Window
     {
     public:
@@ -21,8 +22,8 @@ namespace Engine {
 
         void setContext();
         void setViewport(int width, int height);
-        void render();
         void update();
+        void render();
         void open();
         void close();
 

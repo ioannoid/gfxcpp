@@ -14,24 +14,21 @@
 class TestScene : public Engine::Scene
 {
 public:
-    TestScene(Engine::Game& game, Engine::Window& window);
+    TestScene(Engine::Game& game);
     
-    virtual void render();
     virtual void update();
+    virtual void render();
 
     virtual void onKey(int key, int scancode, int action, int mods);
     virtual void onMouseButton(int button, int action, int mods, double xpos, double ypos);
     virtual void onMouseMove(double xpos, double ypos);
 private:
-    Engine::Game& game;
-    Engine::Window& window;
 
     Engine::Texture2D pieceTexture;
     Engine::Sprite piece;
 
     Engine::Texture2D boardTexture;
     Engine::Sprite board;
-
 
     Engine::Shader shader;
 
