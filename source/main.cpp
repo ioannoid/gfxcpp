@@ -7,7 +7,7 @@
 int main()
 {
 	Engine::Game game = Engine::Game();
-	Engine::Window window = Engine::Window("Divitiae", 1280, 720);
+	Engine::Window window = Engine::Window("Doggy Speen", 1280, 720);
 
 	game.onRender([&] {
 		window.render();

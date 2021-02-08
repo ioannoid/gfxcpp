@@ -3,13 +3,13 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 TestScene::TestScene(Engine::Game& game, Engine::Window& window) : game(game), window(window) {
-    pieceTexture = Engine::Texture2D("/home/ioannis/Coding/C++/Game-Engine/build/doggy.png");
+    pieceTexture = Engine::Texture2D("doggy.png");
     piece = Engine::Sprite(pieceTexture, 16, 16);
 
-    boardTexture = Engine::Texture2D("/home/ioannis/Coding/C++/Game-Engine/build/Board.png");
-    board = Engine::Sprite(boardTexture, 33, 33);
+    //boardTexture = Engine::Texture2D("Board.png");
+    //board = Engine::Sprite(boardTexture, 33, 33);
 
-    shader = Engine::Shader("/home/ioannis/Coding/C++/Game-Engine/build/shader.vert", "/home/ioannis/Coding/C++/Game-Engine/build/shader.frag");
+    shader = Engine::Shader("shader.vert", "shader.frag");
 }
 
 void TestScene::render() {
