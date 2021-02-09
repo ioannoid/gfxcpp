@@ -74,6 +74,14 @@ namespace Engine {
         this->currentScene = &currentScene;
     }
 
+	const int& Window::getWidth() const {
+		return width;
+	}
+
+    const int& Window::getHeight() const {
+		return height;
+	}
+
 	void Window::registerEvents() {
 		glfwSetWindowCloseCallback(glfwWindow, onClose);
 		glfwSetFramebufferSizeCallback(glfwWindow, onResize);

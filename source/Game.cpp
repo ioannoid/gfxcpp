@@ -23,6 +23,7 @@ namespace Engine {
 
     void Game::setWindow(Window& window) {
         this->window = &window;
+        window.open();
     }
 
 	const Window& Game::getWindow() const {

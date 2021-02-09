@@ -24,6 +24,8 @@ namespace Engine {
         void setRotation(const glm::vec3& rot, const float& angle);
         void setScale(const glm::vec3& scale);
 
+        void translate(const glm::vec3& trans);
+
         const glm::mat4& getTransform();
 
     private:
