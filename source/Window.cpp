@@ -25,6 +25,7 @@ namespace Engine {
 
 	void Window::setContext() {
 		glfwMakeContextCurrent(glfwWindow);
+		glfwSwapInterval(0);
 	}
 
 	void Window::setViewport(int width, int height) {
