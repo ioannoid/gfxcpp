@@ -9,7 +9,6 @@ int main() {
 	Engine::Window window = Engine::Window("Doggy Speen", 1280, 720);
 
 	game.setWindow(window);
-	window.open();
 
 	window.onClose([&] {
 		window.close();

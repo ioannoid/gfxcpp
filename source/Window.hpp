@@ -29,6 +29,9 @@ namespace Engine {
 
         void setScene(Scene& currentScene);
 
+        const int& getWidth() const;
+        const int& getHeight() const;
+
         //Events
         
         void registerEvents();

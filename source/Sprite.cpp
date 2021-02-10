@@ -96,6 +96,11 @@ namespace Engine {
         recalculate = true;
     }
 
+    void Sprite::translate(const glm::vec3& trans) {
+        position = glm::translate(position, trans);
+        recalculate = true;
+    }
+
     const glm::mat4& Sprite::getTransform() {
         if(recalculate) {
             transform = position * rotation * scale;
