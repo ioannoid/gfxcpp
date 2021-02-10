@@ -37,6 +37,8 @@ namespace Engine {
             glfwTerminate();
             throw std::runtime_error("GLEW failed to initialize");
         }
+
+        glEnable(GL_DEPTH_TEST);
     }
 
     void Game::clean() {

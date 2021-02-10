@@ -50,11 +50,12 @@ windows: all
 
 clean:
 	@rm -f $(OBJECTS)
+	@rm -f $(DEPENDENCIES)
 	@echo "Cleanup complete!"
 
 info:
-   @echo "[*] Application dir: ${APP_DIR}     "
-   @echo "[*] Object dir:      ${OBJ_DIR}     "
-   @echo "[*] Sources:         ${SRC}         "
-   @echo "[*] Objects:         ${OBJECTS}     "
-   @echo "[*] Dependencies:    ${DEPENDENCIES}"
+	@echo "[*] Application dir: ${APP_DIR}     "
+	@echo "[*] Object dir:      ${OBJ_DIR}     "
+	@echo "[*] Sources:         ${SRC}         "
+	@echo "[*] Objects:         ${OBJECTS}     "
+	@echo "[*] Dependencies:    ${DEPENDENCIES}"

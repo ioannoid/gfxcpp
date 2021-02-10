@@ -38,4 +38,8 @@ namespace Engine {
     const int& Texture2D::getHeight() {
         return height;
     }
+
+    void Texture2D::free() {
+        
+    }
 }

@@ -6,11 +6,9 @@ TestScene::TestScene(Engine::Game& game) : Engine::Scene(game) {
     pieceTexture = Engine::Texture2D("doggy.png");
     piece = Engine::Sprite(pieceTexture, 16, 16);
     piece.setScale(glm::vec3(100.0f, 100.0f, 0.0f));
-    piece.setPosition(glm::vec3((float) game.getWindow().getWidth() / 2, 0, -1.0f));
 
     boardTexture = Engine::Texture2D("Board.png");
     board = Engine::Sprite(boardTexture, 33, 33);
-    board.setPosition(glm::vec3((float) game.getWindow().getWidth() / 2, (float) game.getWindow().getHeight() / 2, -1.5f));
     board.setScale(glm::vec3(100.0f, 100.0f, 0.0f));
 
     shader = Engine::Shader("shader.vert", "shader.frag");
@@ -19,17 +17,23 @@ TestScene::TestScene(Engine::Game& game) : Engine::Scene(game) {
 void TestScene::update() {
     currentFrame+=0.5;
     if(currentFrame == 360) currentFrame = 0;
+
+    projection = glm::ortho(0.0f, (float) game.getWindow().getWidth(), 0.0f, (float) game.getWindow().getHeight(), 0.1f, 100.0f);
+
     piece.setRotation(glm::vec3(0.0f, 0.0f, 1.0f), currentFrame);
-    piece.translate(glm::vec3(cos(glm::radians(currentFrame)), sin(glm::radians(currentFrame)), 0.0f));
+    piece.setPosition(glm::vec3((game.getWindow().getWidth()/2.0f) + (100 * cos(glm::radians(currentFrame))), (game.getWindow().getHeight()/2.0f) + (100 * sin(glm::radians(currentFrame))), -0.5f));
+    board.setPosition(glm::vec3(game.getWindow().getWidth()/2.0f, game.getWindow().getHeight()/2.0f, -1.0f));
 }
 
 void TestScene::render() {
     shader.use();
     //shader.setInt("currentFrame", currentFrame);
     //shader.setInt("frames", 10);
-    shader.setMat("projection", glm::ortho(0.0f, (float) game.getWindow().getWidth(), 0.0f, (float) game.getWindow().getHeight(), 0.1f, 100.0f));//glm::perspective(70.0f, (float) game.getWindow().getWidth() / game.getWindow().getHeight(), 1.0f, 150.0f));
+    shader.setMat("projection", projection);//glm::perspective(70.0f, (float) game.getWindow().getWidth() / game.getWindow().getHeight(), 1.0f, 150.0f));
+
     shader.setMat("transform", piece.getTransform());
     piece.render();
+
     shader.setMat("transform", board.getTransform());
     board.render();
     // triangle.render();

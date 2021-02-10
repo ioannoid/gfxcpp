@@ -5,8 +5,9 @@
 
 #include <iostream>
 
+#include "Resource.hpp"
 namespace Engine {
-    class Texture2D {
+    class Texture2D : public Engine::Resource {
     public:
         friend class Sprite;
 
@@ -16,6 +17,8 @@ namespace Engine {
 
         const int& getWidth();
         const int& getHeight();
+
+        virtual void free();
 
     private:
         GLuint texture;

@@ -32,6 +32,8 @@ private:
 
     Engine::Shader shader;
 
+    glm::mat4 projection;
+
     float currentFrame = 0;
 
     // bool lbuttondown = false;
