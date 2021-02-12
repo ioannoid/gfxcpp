@@ -14,6 +14,9 @@ namespace Engine {
         Texture2D(const char* texture);
         ~Texture2D();
 
+        Texture2D& operator=(Texture2D& texture2d) = delete;
+        Texture2D& operator=(Texture2D&& texture2d);
+
         const int& getWidth();
         const int& getHeight();
 

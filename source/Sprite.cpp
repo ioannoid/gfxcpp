@@ -22,6 +22,11 @@ namespace Engine {
 
         glBindVertexArray(0);
         glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+        position = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+        rotation = glm::rotate(glm::mat4(1.0f), glm::radians(0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
+        scale = glm::scale(glm::mat4(1.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+        transform = position * rotation * scale;
     }
 
     Sprite::Sprite(Texture2D& texture, int width, int height, int xpos, int ypos) {
@@ -71,8 +76,25 @@ namespace Engine {
     }
 
     Sprite::~Sprite() {
-        if(!vbo) glDeleteBuffers(1, &vbo);
-        if(!vao) glDeleteVertexArrays(1, &vao);
+        glDeleteBuffers(1, &vbo);
+        glDeleteVertexArrays(1, &vao);
+    }
+
+    Sprite& Sprite::operator=(Sprite&& sprite) {
+        vao = std::move(sprite.vao);
+        sprite.vao = 0;
+        vbo = std::move(sprite.vbo);
+        sprite.vbo = 0;
+        
+        texture = sprite.texture;
+
+        position = std::move(sprite.position);
+        rotation = std::move(sprite.rotation);
+        scale = std::move(sprite.scale);
+        transform = std::move(sprite.transform);
+
+        recalculate = sprite.recalculate;
+        return *this;
     }
 
     void Sprite::render() {

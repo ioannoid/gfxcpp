@@ -18,7 +18,8 @@ namespace Engine {
         Window();
         Window(const std::string& title, const int& width, const int& height);
 
-        Window& operator=(const Window& window);
+        Window& operator=(const Window& window) = delete;
+        Window& operator=(Window&& window);
 
         void setContext();
         void setViewport(int width, int height);

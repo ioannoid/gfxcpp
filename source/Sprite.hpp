@@ -19,6 +19,9 @@ namespace Engine {
         Sprite(Texture2D& texture, int width, int height, int xpos = 0, int ypos = 0);
         ~Sprite();
 
+        Sprite& operator=(Sprite& sprite) = delete;
+        Sprite& operator=(Sprite&& sprite);
+        
         void render();
 
         void setPosition(const glm::vec3& pos);

@@ -1,8 +1,7 @@
 #include "TestScene.hpp"
 
 TestScene::TestScene(Engine::Game& game) : Engine::Scene(game) {
-    
-    pieceTexture = Engine::Texture2D("lardyspin.png");
+    std::function<void()>();
     piece = Engine::Sprite(pieceTexture, 16, 16);
     piece.setScale(glm::vec3(100.0f, 100.0f, 0.0f));
 
@@ -13,9 +12,9 @@ TestScene::TestScene(Engine::Game& game) : Engine::Scene(game) {
     boardTexture = Engine::Texture2D("board.png");
     board = Engine::Sprite(boardTexture, 33, 33);
     board.setScale(glm::vec3(100.0f, 100.0f, 0.0f));
-    board.setPosition(glm::vec3(game.getWindow().getWidth()/2.0f, game.getWindow().getHeight()/2.0f, -1.0f));
 
     shader = Engine::Shader("shader.vert", "shader.frag");
+
 }
 
 void TestScene::update() {
@@ -26,21 +25,22 @@ void TestScene::update() {
 
     piece.setPosition(glm::vec3((game.getWindow().getWidth()/2.0f) + (100 * cos(glm::radians(currentFrame))), (game.getWindow().getHeight()/2.0f) + (100 * sin(glm::radians(currentFrame))), -0.5f));
     piece1.setPosition(glm::vec3((game.getWindow().getWidth()/2.0f) + (100 * cos(glm::radians(currentFrame)+3.1415926)), (game.getWindow().getHeight()/2.0f) + (100 * sin(glm::radians(currentFrame)+3.1415926)), -0.5f));
+    board.setPosition(glm::vec3(game.getWindow().getWidth()/2.0f, game.getWindow().getHeight()/2.0f, -1.0f));
 }
 
 void TestScene::render() {
     shader.use();
     //shader.setInt("currentFrame", currentFrame);
     //shader.setInt("frames", 10);
-    shader.setMat("projection", projection);//glm::perspective(70.0f, (float) game.getWindow().getWidth() / game.getWindow().getHeight(), 1.0f, 150.0f));
+    shader.setMat4("projection", projection);//glm::perspective(70.0f, (float) game.getWindow().getWidth() / game.getWindow().getHeight(), 1.0f, 150.0f));
 
-    shader.setMat("transform", piece.getTransform());
+    shader.setMat4("transform", piece.getTransform());
     piece.render();
 
-    shader.setMat("transform", piece1.getTransform());
+    shader.setMat4("transform", piece1.getTransform());
     piece1.render();
 
-    shader.setMat("transform", board.getTransform());
+    shader.setMat4("transform", board.getTransform());
     board.render();
     // triangle.render();
     // square.render();

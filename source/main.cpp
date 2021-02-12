@@ -3,6 +3,7 @@
 #include "Game.hpp"
 #include "Window.hpp"
 #include "TestScene.hpp"
+#include "Board.hpp"
 
 int main() {
 	Engine::Game game = Engine::Game();
@@ -23,8 +24,9 @@ int main() {
 	game.initGl();
 
 	TestScene testScene(game);
+	Board board(game);
 
-	window.setScene(testScene);
+	window.setScene(board);
 
 	game.run();
 

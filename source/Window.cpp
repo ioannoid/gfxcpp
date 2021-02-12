@@ -9,6 +9,26 @@ namespace Engine {
 		this->height = height;
 	}
 
+	Window& Window::operator=(Window&& window) {
+		glfwWindow = std::move(window.glfwWindow);
+		window.glfwWindow = nullptr;
+		title = std::move(window.title);
+		width = std::move(window.width);
+		height = std::move(window.height);
+
+		currentScene = std::move(window.currentScene);
+		window.currentScene = nullptr;
+
+		onCloseCallback = std::move(window.onCloseCallback);
+		window.onCloseCallback = std::function<void()>();
+		onResizeCallback = std::move(window.onResizeCallback);
+		window.onResizeCallback = std::function<void(int, int)>();
+		onFocusCallback = std::move(window.onFocusCallback);
+		window.onFocusCallback = std::function<void(bool)>();
+
+		return *this;
+	}
+
 	// Window& Window::operator=(const Window& window) {
 	// 	glfwDestroyWindow(glfwWindow);
 

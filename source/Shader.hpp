@@ -16,12 +16,18 @@ namespace Engine {
     {
     public:
         Shader();
-        Shader (const char* vertexPath, const char* fragmentPath);
+        Shader(const char* vertexPath, const char* fragmentPath);
+        ~Shader();
+
+        Shader& operator=(Shader& shader) = delete;
+        Shader& operator=(Shader&& shader);
 
         void use();
         void setInt(const char* name, const int& value);
+        void setFloat(const char* name, const float& value);
         void setBool(const char* name, const bool& value);
-        void setMat(const char* name, const glm::mat4& value);
+        void setVec2(const char* name, const glm::vec2& value);
+        void setMat4(const char* name, const glm::mat4& value);
 
     private:
         GLuint vertex, fragment, program = 0;

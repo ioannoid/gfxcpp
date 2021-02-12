@@ -29,7 +29,15 @@ namespace Engine {
     }
 
     Texture2D::~Texture2D() { 
-        if(!texture) glDeleteTextures(1, &texture);
+        if(texture) glDeleteTextures(1, &texture);
+    }
+
+    Texture2D& Texture2D::operator=(Texture2D&& texture2d) {
+        texture = std::move(texture2d.texture);
+        texture2d.texture = 0;
+        width = std::move(width);
+        height = std::move(height);
+        return *this;
     }
 
     const int& Texture2D::getWidth() {

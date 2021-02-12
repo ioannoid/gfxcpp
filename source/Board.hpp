@@ -24,14 +24,13 @@ public:
     virtual void onMouseMove(double xpos, double ypos);
 private:
 
-    Engine::Texture2D pieceTexture;
-    Engine::Sprite piece;
+    Engine::Texture2D boardTexture;
+    Engine::Sprite board;
 
     Engine::Shader shader;
 
     glm::mat4 projection;
 
-    float currentFrame = 0;
-
-    // bool lbuttondown = false;
+    float color;
+    float iter = 0;
 };

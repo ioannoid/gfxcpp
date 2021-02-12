@@ -82,6 +82,16 @@ namespace Engine
         glDeleteShader(fragment);
     }
 
+    Shader::~Shader() {
+        glDeleteProgram(program);
+    }
+
+    Shader& Shader::operator=(Shader&& shader) {
+        program = std::move(shader.program);
+        shader.program = 0;
+        return *this;
+    }
+
     void Shader::use()
     {
         glUseProgram(program);
@@ -91,11 +101,19 @@ namespace Engine
         glUniform1i(glGetUniformLocation(program, name), value);
     }
 
+    void Shader::setFloat(const char* name, const float& value) {
+        glUniform1f(glGetUniformLocation(program, name), value);
+    }
+
     void Shader::setBool(const char* name, const bool& value) {
         glUniform1i(glGetUniformLocation(program, name), value);
     }
 
-    void Shader::setMat(const char* name, const glm::mat4& value) {
+    void Shader::setVec2(const char* name, const glm::vec2& value) {
+        glUniform2fv(glGetUniformLocation(program, name), 1, glm::value_ptr(value));
+    }
+
+    void Shader::setMat4(const char* name, const glm::mat4& value) {
         glUniformMatrix4fv(glGetUniformLocation(program, name), 1, GL_FALSE, glm::value_ptr(value));
     }
 }

@@ -55,6 +55,11 @@
         "valarray": "cpp",
         "cstring": "cpp",
         "map": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "condition_variable": "cpp",
+        "list": "cpp",
+        "set": "cpp",
+        "mutex": "cpp",
+        "stop_token": "cpp"
     }
 }
