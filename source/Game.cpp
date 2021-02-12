@@ -4,7 +4,7 @@
 #include "stb_image.hpp"
 namespace Engine {
     Game::Game() {
-        stbi_set_flip_vertically_on_load(true);
+        //stbi_set_flip_vertically_on_load(true);
 
         if (!glfwInit()) {
             fprintf(stderr, "GLFW failed to initialize\n");

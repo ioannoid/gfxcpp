@@ -26,13 +26,13 @@ namespace Engine
     }
 
     Object::~Object() {
-        if(!vbo) glDeleteBuffers(1, &vbo);
-        if(!cbo) glDeleteBuffers(1, &cbo);
-        if(!ubo) glDeleteBuffers(1, &ubo);
-        if(!nbo) glDeleteBuffers(1, &nbo);
-        if(!ibo) glDeleteBuffers(1, &ibo);
-        if(!texture) glDeleteTextures(1, &texture);
-        if(!vao) glDeleteVertexArrays(1, &vao);
+        if(vbo) glDeleteBuffers(1, &vbo);
+        if(cbo) glDeleteBuffers(1, &cbo);
+        if(ubo) glDeleteBuffers(1, &ubo);
+        if(nbo) glDeleteBuffers(1, &nbo);
+        if(ibo) glDeleteBuffers(1, &ibo);
+        if(texture) glDeleteTextures(1, &texture);
+        if(vao) glDeleteVertexArrays(1, &vao);
     }
 
     void Object::loadColors(const std::vector<GLfloat>& colors) {

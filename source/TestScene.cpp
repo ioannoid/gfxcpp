@@ -1,15 +1,19 @@
 #include "TestScene.hpp"
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
 
 TestScene::TestScene(Engine::Game& game) : Engine::Scene(game) {
-    pieceTexture = Engine::Texture2D("doggy.png");
+    
+    pieceTexture = Engine::Texture2D("lardyspin.png");
     piece = Engine::Sprite(pieceTexture, 16, 16);
     piece.setScale(glm::vec3(100.0f, 100.0f, 0.0f));
 
-    boardTexture = Engine::Texture2D("Board.png");
+    piece1Texture = Engine::Texture2D("bean.png");
+    piece1 = Engine::Sprite(piece1Texture, 860, 562);
+    piece1.setScale(glm::vec3(100.0f, 100.0f, 0.0f));
+
+    boardTexture = Engine::Texture2D("board.png");
     board = Engine::Sprite(boardTexture, 33, 33);
     board.setScale(glm::vec3(100.0f, 100.0f, 0.0f));
+    board.setPosition(glm::vec3(game.getWindow().getWidth()/2.0f, game.getWindow().getHeight()/2.0f, -1.0f));
 
     shader = Engine::Shader("shader.vert", "shader.frag");
 }
@@ -18,11 +22,10 @@ void TestScene::update() {
     currentFrame+=0.5;
     if(currentFrame == 360) currentFrame = 0;
 
-    projection = glm::ortho(0.0f, (float) game.getWindow().getWidth(), 0.0f, (float) game.getWindow().getHeight(), 0.1f, 100.0f);
+    projection = glm::ortho(0.0f, (float) game.getWindow().getWidth(), (float) game.getWindow().getHeight(), 0.0f, 0.1f, 100.0f);
 
-    piece.setRotation(glm::vec3(0.0f, 0.0f, 1.0f), currentFrame);
     piece.setPosition(glm::vec3((game.getWindow().getWidth()/2.0f) + (100 * cos(glm::radians(currentFrame))), (game.getWindow().getHeight()/2.0f) + (100 * sin(glm::radians(currentFrame))), -0.5f));
-    board.setPosition(glm::vec3(game.getWindow().getWidth()/2.0f, game.getWindow().getHeight()/2.0f, -1.0f));
+    piece1.setPosition(glm::vec3((game.getWindow().getWidth()/2.0f) + (100 * cos(glm::radians(currentFrame)+3.1415926)), (game.getWindow().getHeight()/2.0f) + (100 * sin(glm::radians(currentFrame)+3.1415926)), -0.5f));
 }
 
 void TestScene::render() {
@@ -33,6 +36,9 @@ void TestScene::render() {
 
     shader.setMat("transform", piece.getTransform());
     piece.render();
+
+    shader.setMat("transform", piece1.getTransform());
+    piece1.render();
 
     shader.setMat("transform", board.getTransform());
     board.render();
@@ -52,5 +58,5 @@ void TestScene::onMouseButton(int button, int action, int mods, double xpos, dou
 }
 
 void TestScene::onMouseMove(double xpos, double ypos) {
-    // if(lbuttondown) std::cout << xpos << " " << ypos << std::endl;
+    //std::cout << xpos << " " << ypos << std::endl;
 }

@@ -52,6 +52,9 @@
         "compare": "cpp",
         "concepts": "cpp",
         "ranges": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "cstring": "cpp",
+        "map": "cpp",
+        "iomanip": "cpp"
     }
 }

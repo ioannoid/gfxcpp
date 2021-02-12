@@ -2,6 +2,8 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "Scene.hpp"
 #include "Object.hpp"
@@ -23,9 +25,10 @@ public:
     virtual void onMouseButton(int button, int action, int mods, double xpos, double ypos);
     virtual void onMouseMove(double xpos, double ypos);
 private:
-
     Engine::Texture2D pieceTexture;
     Engine::Sprite piece;
+    Engine::Texture2D piece1Texture;
+    Engine::Sprite piece1;
 
     Engine::Texture2D boardTexture;
     Engine::Sprite board;

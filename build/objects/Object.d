@@ -1,141 +1,144 @@
-build/objects/Object.o: source/Object.cpp /usr/include/stdc-predef.h \
- source/Object.hpp /usr/include/GL/glew.h /usr/include/c++/10.2.0/cstddef \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/c++config.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/os_defines.h \
- /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
- /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/10.2.0/pstl/pstl_config.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include/stddef.h \
- /usr/include/c++/10.2.0/cstdint \
- /usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
- /usr/include/bits/types.h /usr/include/bits/timesize.h \
- /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
- /usr/include/bits/wchar.h /usr/include/bits/stdint-intn.h \
- /usr/include/bits/stdint-uintn.h /usr/include/GL/glu.h \
- /usr/include/GL/gl.h /usr/include/GLFW/glfw3.h \
- /usr/include/c++/10.2.0/vector \
- /usr/include/c++/10.2.0/bits/stl_algobase.h \
- /usr/include/c++/10.2.0/bits/functexcept.h \
- /usr/include/c++/10.2.0/bits/exception_defines.h \
- /usr/include/c++/10.2.0/bits/cpp_type_traits.h \
- /usr/include/c++/10.2.0/ext/type_traits.h \
- /usr/include/c++/10.2.0/ext/numeric_traits.h \
- /usr/include/c++/10.2.0/bits/stl_pair.h \
- /usr/include/c++/10.2.0/bits/move.h /usr/include/c++/10.2.0/type_traits \
- /usr/include/c++/10.2.0/bits/stl_iterator_base_types.h \
- /usr/include/c++/10.2.0/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/10.2.0/bits/concept_check.h \
- /usr/include/c++/10.2.0/debug/assertions.h \
- /usr/include/c++/10.2.0/bits/stl_iterator.h \
- /usr/include/c++/10.2.0/bits/ptr_traits.h \
- /usr/include/c++/10.2.0/debug/debug.h \
- /usr/include/c++/10.2.0/bits/predefined_ops.h \
- /usr/include/c++/10.2.0/bits/allocator.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/10.2.0/ext/new_allocator.h /usr/include/c++/10.2.0/new \
- /usr/include/c++/10.2.0/exception \
- /usr/include/c++/10.2.0/bits/exception.h \
- /usr/include/c++/10.2.0/bits/exception_ptr.h \
- /usr/include/c++/10.2.0/bits/cxxabi_init_exception.h \
- /usr/include/c++/10.2.0/typeinfo \
- /usr/include/c++/10.2.0/bits/hash_bytes.h \
- /usr/include/c++/10.2.0/bits/nested_exception.h \
- /usr/include/c++/10.2.0/bits/memoryfwd.h \
- /usr/include/c++/10.2.0/bits/stl_construct.h \
- /usr/include/c++/10.2.0/bits/stl_uninitialized.h \
- /usr/include/c++/10.2.0/ext/alloc_traits.h \
- /usr/include/c++/10.2.0/bits/alloc_traits.h \
- /usr/include/c++/10.2.0/bits/stl_vector.h \
- /usr/include/c++/10.2.0/initializer_list \
- /usr/include/c++/10.2.0/bits/stl_bvector.h \
- /usr/include/c++/10.2.0/bits/functional_hash.h \
- /usr/include/c++/10.2.0/bits/range_access.h \
- /usr/include/c++/10.2.0/bits/iterator_concepts.h \
- /usr/include/c++/10.2.0/concepts \
- /usr/include/c++/10.2.0/bits/range_cmp.h \
- /usr/include/c++/10.2.0/bits/int_limits.h \
- /usr/include/c++/10.2.0/bits/vector.tcc /usr/include/c++/10.2.0/iostream \
- /usr/include/c++/10.2.0/ostream /usr/include/c++/10.2.0/ios \
- /usr/include/c++/10.2.0/iosfwd /usr/include/c++/10.2.0/bits/stringfwd.h \
- /usr/include/c++/10.2.0/bits/postypes.h /usr/include/c++/10.2.0/cwchar \
- /usr/include/wchar.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/10.2.0/include/stdarg.h \
- /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
- /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h \
- /usr/include/c++/10.2.0/bits/char_traits.h \
- /usr/include/c++/10.2.0/bits/localefwd.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/c++locale.h \
- /usr/include/c++/10.2.0/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/10.2.0/cctype \
- /usr/include/ctype.h /usr/include/bits/endian.h \
- /usr/include/bits/endianness.h /usr/include/c++/10.2.0/bits/ios_base.h \
- /usr/include/c++/10.2.0/ext/atomicity.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/gthr.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/struct_timespec.h /usr/include/bits/sched.h \
- /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
- /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
- /usr/include/bits/types/struct_timeval.h \
- /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
- /usr/include/bits/types/struct_itimerspec.h \
- /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
- /usr/include/bits/pthreadtypes-arch.h /usr/include/bits/struct_mutex.h \
- /usr/include/bits/struct_rwlock.h /usr/include/bits/setjmp.h \
- /usr/include/bits/types/__sigset_t.h \
- /usr/include/bits/types/struct___jmp_buf_tag.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /usr/include/c++/10.2.0/bits/locale_classes.h \
- /usr/include/c++/10.2.0/string \
- /usr/include/c++/10.2.0/bits/ostream_insert.h \
- /usr/include/c++/10.2.0/bits/cxxabi_forced.h \
- /usr/include/c++/10.2.0/bits/stl_function.h \
- /usr/include/c++/10.2.0/backward/binders.h \
- /usr/include/c++/10.2.0/bits/basic_string.h \
- /usr/include/c++/10.2.0/string_view \
- /usr/include/c++/10.2.0/bits/string_view.tcc \
- /usr/include/c++/10.2.0/ext/string_conversions.h \
- /usr/include/c++/10.2.0/cstdlib /usr/include/stdlib.h \
- /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
- /usr/include/sys/types.h /usr/include/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/types/sigset_t.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
- /usr/include/c++/10.2.0/bits/std_abs.h /usr/include/c++/10.2.0/cstdio \
- /usr/include/stdio.h /usr/include/bits/types/__fpos_t.h \
- /usr/include/bits/types/__fpos64_t.h \
- /usr/include/bits/types/struct_FILE.h \
- /usr/include/bits/types/cookie_io_functions_t.h \
- /usr/include/bits/stdio_lim.h /usr/include/bits/stdio.h \
- /usr/include/c++/10.2.0/cerrno /usr/include/errno.h \
- /usr/include/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
- /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
- /usr/include/c++/10.2.0/bits/charconv.h \
- /usr/include/c++/10.2.0/bits/basic_string.tcc \
- /usr/include/c++/10.2.0/bits/locale_classes.tcc \
- /usr/include/c++/10.2.0/system_error \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/error_constants.h \
- /usr/include/c++/10.2.0/stdexcept /usr/include/c++/10.2.0/streambuf \
- /usr/include/c++/10.2.0/bits/streambuf.tcc \
- /usr/include/c++/10.2.0/bits/basic_ios.h \
- /usr/include/c++/10.2.0/bits/locale_facets.h \
- /usr/include/c++/10.2.0/cwctype /usr/include/wctype.h \
- /usr/include/bits/wctype-wchar.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/ctype_base.h \
- /usr/include/c++/10.2.0/bits/streambuf_iterator.h \
- /usr/include/c++/10.2.0/x86_64-pc-linux-gnu/bits/ctype_inline.h \
- /usr/include/c++/10.2.0/bits/locale_facets.tcc \
- /usr/include/c++/10.2.0/bits/basic_ios.tcc \
- /usr/include/c++/10.2.0/bits/ostream.tcc /usr/include/c++/10.2.0/istream \
- /usr/include/c++/10.2.0/bits/istream.tcc source/stb_image.hpp \
- /usr/include/c++/10.2.0/stdlib.h
+build/objects/Object.o: source/Object.cpp source/Object.hpp \
+ include/glew-2.2.0/include/GL/glew.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\inttypes.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\crtdefs.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\corecrt.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\_mingw.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\_mingw_mac.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\_mingw_secapi.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\vadefs.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\sdks/_mingw_ddk.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stdint.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\stdint.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\stddef.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\stddef.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\gl\glu.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\gl\gl.h \
+ include/glfw-3.3.2/include/GLFW/glfw3.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\vector \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_algobase.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\c++config.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\os_defines.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\cpu_defines.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\pstl\pstl_config.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\functexcept.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\exception_defines.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\cpp_type_traits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ext\type_traits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ext\numeric_traits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_pair.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\move.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\type_traits \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\compare \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\concepts \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_iterator_base_types.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\iterator_concepts.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\ptr_traits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\range_cmp.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_iterator_base_funcs.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\concept_check.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\debug\assertions.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_iterator.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\new \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\exception \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\exception.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\exception_ptr.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\cxxabi_init_exception.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\typeinfo \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\hash_bytes.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\nested_exception.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\debug\debug.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\predefined_ops.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_algo.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\cstdlib \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\stdlib.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\corecrt_wstdlib.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include-fixed\limits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include-fixed\syslimits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\limits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\sec_api\stdlib_s.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\stdlib.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\malloc.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\std_abs.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\algorithmfwd.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\initializer_list \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_heap.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_tempbuf.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_construct.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\uniform_int_dist.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\limits \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\allocator.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\c++allocator.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ext\new_allocator.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\memoryfwd.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_uninitialized.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ext\alloc_traits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\alloc_traits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_vector.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_bvector.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\functional_hash.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\range_access.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\int_limits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\vector.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\iostream \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ostream \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ios \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\iosfwd \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stringfwd.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\postypes.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\cwchar \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\wchar.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\corecrt_stdio_config.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\_mingw_off_t.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\_mingw_stat64.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\swprintf.inl \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\sec_api\wchar_s.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\char_traits.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\cstdint \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\localefwd.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\c++locale.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\clocale \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\locale.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\stdio.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\sec_api\stdio_s.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\cctype \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\ctype.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\ios_base.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ext\atomicity.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\gthr.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\gthr-default.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\errno.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\atomic_word.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\locale_classes.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\string \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\ostream_insert.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\cxxabi_forced.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\stl_function.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\backward\binders.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\basic_string.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\string_view \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\string_view.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\ext\string_conversions.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\cstdio \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\cerrno \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\charconv.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\basic_string.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\locale_classes.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\system_error \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\error_constants.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\stdexcept \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\streambuf \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\streambuf.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\basic_ios.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\locale_facets.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\cwctype \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\x86_64-w64-mingw32\include\wctype.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\ctype_base.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\streambuf_iterator.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\x86_64-w64-mingw32\bits\ctype_inline.h \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\locale_facets.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\basic_ios.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\ostream.tcc \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\istream \
+ c\:\programdata\chocolatey\lib\mingw\tools\install\mingw64\lib\gcc\x86_64-w64-mingw32\10.2.0\include\c++\bits\istream.tcc \
+ source/stb_image.hpp

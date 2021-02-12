@@ -28,13 +28,14 @@
             "name": "Debug (No Build)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/program.out",
+            "program": "${workspaceFolder}/build/program.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/build",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
