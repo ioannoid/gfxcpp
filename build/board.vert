@@ -5,11 +5,23 @@ layout (location = 2) in vec2 uvs;
 
 out vec2 textureCoords;
 
-uniform mat4 transform;
 uniform mat4 projection;
+uniform mat4 position;
+uniform mat4 rotation;
+uniform mat4 scale;
+
+uniform vec2 cursorPos;
 
 void main()
 {
-    gl_Position = projection * transform * vec4(pos, 1.0f);
+    gl_Position = projection * position * 
+    mat4(
+    vec4(1.0f, 0.0f, 0.0f, 0.0f), 
+    vec4(0.0f, 1.0f, 0.0f, 0.0f), 
+    vec4(0.0f, 0.0f, 1.0f, 0.0f), 
+    vec4(31.0f*(gl_InstanceID%21), 31.0f*(floor(gl_InstanceID/21.0f)), 0.0f, 1.0f)) * rotation * scale * vec4(pos, 1.0f);
+    
+    
+
     textureCoords = uvs;
 }

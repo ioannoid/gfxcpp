@@ -11,14 +11,14 @@ SRC      := $(wildcard source/*.cpp)
 EXT      :=
 
 ifeq ($(OS),Windows_NT)
-        CXX += x86_64-w64-mingw32-g++
-        INCL += -Iinclude/glfw-3.3.2/include -Iinclude/glew-2.2.0/include -Iinclude/
-        LDFLAGS += -Linclude/glfw-3.3.2/lib -Linclude/glew-2.2.0/lib -Linclude/lib -static-libgcc -static-libstdc++ -lglfw3 -lglew32 -lglu32 -lopengl32 -lgdi32 -luser32 -static -lwinpthread
-        EXT += .exe
+    CXX += x86_64-w64-mingw32-g++
+    INCL += -Iinclude/glfw-3.3.2/include -Iinclude/glew-2.2.0/include -Iinclude/
+    LDFLAGS += -Linclude/glfw-3.3.2/lib -Linclude/glew-2.2.0/lib -Linclude/lib -static-libgcc -static-libstdc++ -lglfw3 -lglew32 -lglu32 -lopengl32 -lgdi32 -luser32 -static -lwinpthread
+    EXT += .exe
 else
-        CXX += g++
-        LDFLAGS += -lstdc++ -lm `pkg-config --libs glfw3 glew`
-        EXT += .out
+    CXX += g++
+    LDFLAGS += -lstdc++ -lm `pkg-config --libs glfw3 glew`
+    EXT += .out
 endif
 
 OBJECTS  := $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)

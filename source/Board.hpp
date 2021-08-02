@@ -3,6 +3,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include <vector>
+
 #include "Scene.hpp"
 #include "Object.hpp"
 #include "Shader.hpp"
@@ -31,6 +33,5 @@ private:
 
     glm::mat4 projection;
 
-    float color;
-    float iter = 0;
+    glm::vec2 cursorPos;
 };

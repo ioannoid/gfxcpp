@@ -3,6 +3,22 @@
 namespace Engine {
     Sprite::Sprite() { }
 
+    Sprite::Sprite(Sprite&& sprite) {
+        vao = std::move(sprite.vao);
+        sprite.vao = 0;
+        vbo = std::move(sprite.vbo);
+        sprite.vbo = 0;
+        
+        texture = sprite.texture;
+
+        position = std::move(sprite.position);
+        rotation = std::move(sprite.rotation);
+        scale = std::move(sprite.scale);
+        transform = std::move(sprite.transform);
+
+        recalculate = sprite.recalculate;
+    }
+
     Sprite::Sprite(Texture2D& texture) {
         this->texture = &texture;
 
@@ -103,9 +119,19 @@ namespace Engine {
         glDrawArrays(GL_TRIANGLES, 0, 6);
     }
 
+    void Sprite::render(const int& num) {
+        glBindTexture(GL_TEXTURE_2D, texture->texture);
+        glBindVertexArray(vao);
+        glDrawArraysInstanced(GL_TRIANGLES, 0, 6, num);
+    }
+
     void Sprite::setPosition(const glm::vec3& pos) {
         position = glm::translate(glm::mat4(1.0f), pos);
         recalculate = true;
+    }
+
+    glm::mat4 Sprite::getPosition() {
+        return position;
     }
 
     void Sprite::setRotation(const glm::vec3& rot, const float& angle) {
@@ -113,9 +139,17 @@ namespace Engine {
         recalculate = true;
     }
 
+    glm::mat4 Sprite::getRotation() {
+        return rotation;
+    }
+
     void Sprite::setScale(const glm::vec3& scale) {
         this->scale = glm::scale(glm::mat4(1.0f), scale);
         recalculate = true;
+    }
+
+    glm::mat4 Sprite::getScale() {
+        return scale;
     }
 
     void Sprite::translate(const glm::vec3& trans) {

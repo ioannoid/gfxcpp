@@ -15,6 +15,7 @@ namespace Engine {
     class Sprite {
     public:
         Sprite();
+        Sprite(Sprite&& sprite);
         Sprite(Texture2D& texture);
         Sprite(Texture2D& texture, int width, int height, int xpos = 0, int ypos = 0);
         ~Sprite();
@@ -23,10 +24,14 @@ namespace Engine {
         Sprite& operator=(Sprite&& sprite);
         
         void render();
+        void render(const int& num);
 
         void setPosition(const glm::vec3& pos);
+        glm::mat4 getPosition();
         void setRotation(const glm::vec3& rot, const float& angle);
+        glm::mat4 getRotation();
         void setScale(const glm::vec3& scale);
+        glm::mat4 getScale();
 
         void translate(const glm::vec3& trans);
 
