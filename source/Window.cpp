@@ -9,6 +9,10 @@ namespace Engine {
 		this->height = height;
 	}
 
+	Window::~Window() {
+		glfwDestroyWindow(glfwWindow);
+	}
+
 	Window& Window::operator=(Window&& window) {
 		glfwWindow = std::move(window.glfwWindow);
 		window.glfwWindow = nullptr;
@@ -65,7 +69,7 @@ namespace Engine {
 
 			currentScene->render();
 
-			glClearColor(0.0f, 1.0f, 0.5f, 1.0f);
+			glClearColor(0.0f, 0.5f, 1.0f, 1.0f);
 
 			glBindVertexArray(0);
 			glBindTexture(GL_TEXTURE_2D, 0);
@@ -87,7 +91,6 @@ namespace Engine {
 
 	void Window::close() {
 		glfwSetWindowShouldClose(glfwWindow, 1);
-		glfwDestroyWindow(glfwWindow);
 	}
 
     void Window::setScene(Scene& currentScene) {

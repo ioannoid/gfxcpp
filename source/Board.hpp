@@ -32,6 +32,5 @@ private:
     Engine::Shader shader;
 
     glm::mat4 projection;
-
-    glm::vec2 cursorPos;
+    float test = 0;
 };

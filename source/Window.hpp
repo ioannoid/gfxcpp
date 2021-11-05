@@ -17,6 +17,7 @@ namespace Engine {
     public:
         Window();
         Window(const std::string& title, const int& width, const int& height);
+        ~Window();
 
         Window& operator=(const Window& window) = delete;
         Window& operator=(Window&& window);
