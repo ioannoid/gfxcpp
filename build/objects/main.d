@@ -158,4 +158,9 @@ build/objects/main.o: source/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/12.2.0/bits/algorithmfwd.h \
  /usr/include/c++/12.2.0/bits/stl_heap.h \
  /usr/include/c++/12.2.0/bits/stl_tempbuf.h \
- /usr/include/c++/12.2.0/bits/uniform_int_dist.h source/window.hpp
+ /usr/include/c++/12.2.0/bits/uniform_int_dist.h source/shader.hpp \
+ /usr/include/c++/12.2.0/fstream /usr/include/c++/12.2.0/bits/codecvt.h \
+ /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/basic_file.h \
+ /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++io.h \
+ /usr/include/c++/12.2.0/bits/fstream.tcc /usr/include/c++/12.2.0/sstream \
+ /usr/include/c++/12.2.0/bits/sstream.tcc source/window.hpp

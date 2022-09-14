@@ -31,7 +31,7 @@ private:
 class engine_error : public std::exception {
 public:
 	engine_error(const std::string& error) : error(error) {}
-	virtual const char* what() const noexcept { return error.c_str(); }
+	const char* what() const noexcept override { return error.c_str(); }
 
 private:
 	std::string error;
