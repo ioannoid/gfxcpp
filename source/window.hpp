@@ -22,6 +22,8 @@ public:
 
 	void make_context_current();
 	void swap_buffers();
+	void poll_events();
+	void destroy();
 
 	void on_close(const std::function<void()>& on_close_callback);
 

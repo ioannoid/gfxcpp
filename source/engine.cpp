@@ -30,13 +30,9 @@ void engine::init_gl() {
 	}
 }
 
-void engine::run(const std::function<void()>& user_run) {
-	while (running) {
-		glfwPollEvents();
+void engine::run(const std::function<void()>& user_run) { user_run(); }
 
-		user_run();
-	}
-}
+const bool& engine::is_running() { return running; }
 
 void engine::end_loop() { running = false; }
 

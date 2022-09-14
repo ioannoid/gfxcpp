@@ -17,6 +17,7 @@ public:
 
 	void init_gl();
 	void run(const std::function<void()>& user_run);
+	const bool& is_running();
 	void end_loop();
 	void exit(const int& error);
 

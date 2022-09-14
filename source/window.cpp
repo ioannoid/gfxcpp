@@ -34,6 +34,10 @@ void window::make_context_current() {
 
 void window::swap_buffers() { glfwSwapBuffers(glfw_window); }
 
+void window::poll_events() { glfwPollEvents(); }
+
+void window::destroy() { glfwDestroyWindow(glfw_window); }
+
 void window::on_close(const std::function<void()>& on_close_callback) {
 	this->on_close_callback = on_close_callback;
 }
