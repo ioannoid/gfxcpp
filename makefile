@@ -1,5 +1,5 @@
 CXX      :=
-CXXFLAGS := -Wall -Wextra -Wno-unused-parameter -Wno-volatile -Wno-unused-but-set-variable -std=c++20
+CXXFLAGS := -Wall -Wextra -Wno-unused-parameter -Wno-volatile -Wno-unused-but-set-variable -std=c++20 -g
 LDFLAGS  :=
 BUILD    := build
 OBJ_DIR  := $(BUILD)/objects

@@ -2,7 +2,7 @@
 
 using namespace gfxcpp;
 
-engine::engine() {
+engine::engine() : running(true) {
 	if (!glfwInit()) {
 		exit(1);
 	}
