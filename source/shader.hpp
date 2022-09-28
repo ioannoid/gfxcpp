@@ -13,16 +13,16 @@ namespace gfxcpp {
 
 class shader {
 public:
-    shader(engine& engine_ref, const std::string& vert_path,
-           const std::string& frag_path);
-    ~shader();
+	shader(engine& engine_ref, const std::string& vert_path,
+		   const std::string& frag_path);
+	~shader();
 
-    void use_program();
+	void use_program();
 
 private:
-    engine& engine_ref;
+	engine& engine_ref;
 
-    GLuint program;
+	GLuint program;
 };
 
 } // namespace gfxcpp

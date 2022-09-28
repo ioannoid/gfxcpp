@@ -31,7 +31,7 @@ private:
 class engine_error : public std::exception {
 public:
 	engine_error(const std::string& error) : error(error) {}
-	const char* what() const noexcept override { return error.c_str(); }
+	inline const char* what() const noexcept override { return error.c_str(); }
 
 private:
 	std::string error;

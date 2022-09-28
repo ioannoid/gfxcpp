@@ -20,6 +20,8 @@ void engine::exit(const int& error) {
 		throw engine_error("GLFW window failed to open");
 	case 3:
 		throw engine_error("GLEW failed to initialize");
+	case 4:
+		throw engine_error("Shader error");
 	}
 }
 
