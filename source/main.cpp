@@ -1,8 +1,8 @@
 #include <iostream>
 
 #include "engine.hpp"
+#include "mesh_2d.hpp"
 #include "shader.hpp"
-#include "sprite.hpp"
 #include "window.hpp"
 
 using namespace gfxcpp;
@@ -20,9 +20,11 @@ int main() {
 	game.init_gl();
 
 	shader shader(game, "shader.vert", "shader.frag");
-	sprite sprite(game,
-				  {-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.5f, 0.5f, 0.0f,
-				   0.5f, 0.5f, 0.0f, -0.5, 0.5f, 0.0f, -0.5f, -0.5f, 0.0f});
+	mesh_2d sprite1(game,
+					{-0.5f, -0.5f, 0.0f, 0.5f, -0.5f, 0.0f, 0.5f, 0.5f, 0.0f,
+					 0.5f, 0.5f, 0.0f, -0.5, 0.5f, 0.0f, -0.5f, -0.5f, 0.0f});
+	mesh_2d sprite2(game,
+					{0.5f, 0.0f, 0.0f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f});
 
 	game.set_viewport(0, 0, WIDTH, HEIGHT);
 
@@ -32,7 +34,8 @@ int main() {
 			glClear(GL_COLOR_BUFFER_BIT);
 
 			shader.use_program();
-			sprite.render();
+			// sprite1.render();
+			sprite2.render();
 
 			window.swap_buffers();
 			window.poll_events();

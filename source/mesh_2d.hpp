@@ -1,5 +1,5 @@
-#ifndef SPRITE_HPP
-#define SPRITE_HPP
+#ifndef MESH_2D_HPP
+#define MESH_2D_HPP
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -13,12 +13,12 @@
 
 namespace gfxcpp {
 
-class sprite : public object {
+class mesh_2d : public object {
 public:
-	sprite(engine& engine_ref);
-	sprite(engine& engine_ref, float vertices[], const size_t& size);
-	sprite(engine& engine_ref, const std::vector<float>& vertices);
-	~sprite();
+	mesh_2d(engine& engine_ref);
+	mesh_2d(engine& engine_ref, float vertices[], const size_t& size);
+	mesh_2d(engine& engine_ref, const std::vector<float>& vertices);
+	~mesh_2d();
 
 	void update() override;
 	void render() override;
@@ -34,4 +34,4 @@ private:
 
 } // namespace gfxcpp
 
-#endif // SPRITE_HPP
+#endif // MESH_2D_HPP
