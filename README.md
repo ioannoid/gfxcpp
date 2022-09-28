@@ -1,2 +1,2 @@
-# Game-Engine
+# gfxcpp
 Game engine developed in C++ with OpenGL designed to be highly user customizable, while also maintaining simple usability and efficiency. Mainly for use in a game that I am currently working on called Divitiae. Most features still need to be added (slowly mind you) with only basic support for event handling, texture loading, and shader loading currently available. This is not exactly intended for use by anyone but myself but I guess its here to download (or to laugh at) if you want.
