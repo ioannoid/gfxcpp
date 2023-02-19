@@ -2,9 +2,10 @@
 #include <GLFW/glfw3.h>
 
 using namespace gfxcpp;
+using namespace std;
 
 window::window(class engine& engine_ref, const int& width, const int& height,
-			   const std::string& title)
+			   const string& title)
 	: engine_ref(engine_ref), title(title) {
 
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -23,6 +24,7 @@ window::window(class engine& engine_ref, const int& width, const int& height,
 	glfwSetWindowUserPointer(glfw_window, this);
 
 	glfwSetWindowCloseCallback(glfw_window, on_close);
+	glfwSetWindowSizeCallback(glfw_window, on_resize);
 }
 
 window::~window() {}
@@ -38,11 +40,26 @@ void window::poll_events() { glfwPollEvents(); }
 
 void window::destroy() { glfwDestroyWindow(glfw_window); }
 
-void window::on_close(const std::function<void()>& on_close_callback) {
+const int& window::get_width() { return width; }
+
+const int& window::get_height() { return height; }
+
+void window::on_close(const function<void()>& on_close_callback) {
 	this->on_close_callback = on_close_callback;
+}
+
+void window::on_resize(const function<void(int, int)>& on_resize_callback) {
+	this->on_resize_callback = on_resize_callback;
 }
 
 void window::on_close(GLFWwindow* glfw_window) {
 	window* self = static_cast<window*>(glfwGetWindowUserPointer(glfw_window));
 	self->on_close_callback();
+}
+
+void window::on_resize(GLFWwindow* glfw_window, int width, int height) {
+	window* self = static_cast<window*>(glfwGetWindowUserPointer(glfw_window));
+	self->width = width;
+	self->height = height;
+	self->on_resize_callback(self->width, self->height);
 }
