@@ -4,7 +4,7 @@ using namespace gfxcpp;
 
 engine::engine() : running(true) {
 	if (!glfwInit()) {
-		exit(1);
+		exit(-1);
 	}
 }
 

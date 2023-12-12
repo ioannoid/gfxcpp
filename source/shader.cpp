@@ -68,3 +68,15 @@ shader::shader(engine& engine_ref, const std::string& vert_path,
 shader::~shader() { glDeleteProgram(program); }
 
 void shader::use_program() { glUseProgram(program); }
+
+void shader::set_int(const char* name, const int& value) {
+    glUniform1i(glGetUniformLocation(program, name), value);
+}
+
+void shader::set_float(const char* name, const float& value) {
+    glUniform1f(glGetUniformLocation(program, name), value);
+}
+
+void shader::set_vec2(const char* name, const glm::vec2& value) {
+    glUniform2fv(glGetUniformLocation(program, name), 1, glm::value_ptr(value));
+}

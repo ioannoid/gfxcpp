@@ -5,11 +5,11 @@ namespace gfxcpp {
 
 class object {
 public:
-	object();
-	virtual ~object();
+    object();
+    virtual ~object();
 
-	virtual void update() = 0;
-	virtual void render() = 0;
+    virtual void update() = 0;
+    virtual void render() = 0;
 
 private:
 };
