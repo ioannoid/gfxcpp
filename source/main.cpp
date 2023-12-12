@@ -15,7 +15,10 @@ int main() {
     engine game;
     window window(game, WIDTH, HEIGHT, "Divitiae");
 
-    window.on_close([&] { game.end_loop(); });
+	window.on_close([&] { game.end_loop(); });
+    window.on_resize([&] (int width, int height) { 
+        game.set_viewport(0, 0, width, height); 
+    });
 
     window.make_context_current();
     game.init_gl();
