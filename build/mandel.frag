@@ -39,13 +39,13 @@ void main()
 
     //float x = map(gl_FragCoord.x, -test+0, test+resolution.x, test+-2.0, -test+0.5);
     //float y = map(gl_FragCoord.y, -test+0, test+resolution.y, test+-0.9, -test+1.1);
-    //float x = map(gl_FragCoord.x, 0, 800, -2.0, 0.5);
-    //float y = map(gl_FragCoord.y, 0, 600, -0.9, 1.1);
-    float x = map(gl_FragCoord.x, 0, 800, -0.7459-test, -0.7449+test);
-    float y = map(gl_FragCoord.y, 0, 600, 0.0995-test, 0.1005+test);
+    float x = map(gl_FragCoord.x, 0, 800, -1.7445-test, 0.2555+test);
+    float y = map(gl_FragCoord.y, 0, 600, -0.9-test, 1.1+test);
+    //float x = map(gl_FragCoord.x, 0, 800, -0.7459-test, -0.7449+test);
+    //float y = map(gl_FragCoord.y, 0, 600, 0.0995-test, 0.1005+test);
 
 
-    int iter = 1000;
+    int iter = 500;
 
     if(inSet(iter, x, y)) {
         FragColor = vec4(0.0, 0.0, 0.0, 1.0);

@@ -25,6 +25,7 @@ window::window(class engine& engine_ref, const int& width, const int& height,
 
 	glfwSetWindowCloseCallback(glfw_window, on_close);
 	glfwSetWindowSizeCallback(glfw_window, on_resize);
+    glfwSetKeyCallback(glfw_window, on_key);
 }
 
 window::~window() {}
@@ -52,6 +53,10 @@ void window::on_resize(const function<void(int, int)>& on_resize_callback) {
 	this->on_resize_callback = on_resize_callback;
 }
 
+void window::on_key(const function<void(int, int, int, int)>& on_key_callback) {
+    this->on_key_callback = on_key_callback;
+}
+
 void window::on_close(GLFWwindow* glfw_window) {
 	window* self = static_cast<window*>(glfwGetWindowUserPointer(glfw_window));
 	self->on_close_callback();
@@ -62,4 +67,9 @@ void window::on_resize(GLFWwindow* glfw_window, int width, int height) {
 	self->width = width;
 	self->height = height;
 	self->on_resize_callback(self->width, self->height);
+}
+
+void window::on_key(GLFWwindow* glfw_window, int key, int scancode, int action, int mods) {
+    window* self = static_cast<window*>(glfwGetWindowUserPointer(glfw_window));
+    self->on_key_callback(key, scancode, action, mods);
 }

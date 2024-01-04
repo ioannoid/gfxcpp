@@ -30,6 +30,7 @@ public:
 
 	void on_close(const std::function<void()>& on_close_callback);
     void on_resize(const std::function<void(int, int)>& on_resize_callback);
+    void on_key(const std::function<void(int, int, int, int)>& on_key_callback);
 
 private:
 	engine& engine_ref;
@@ -40,9 +41,11 @@ private:
 
 	std::function<void()> on_close_callback;
 	std::function<void(int, int)> on_resize_callback;
+    std::function<void(int, int, int, int)> on_key_callback;
 
 	static void on_close(GLFWwindow* glfw_window);
     static void on_resize(GLFWwindow* glfw_window, int width, int height);
+    static void on_key(GLFWwindow* glfw_window, int key, int scancode, int action, int mods);
 };
 
 } // namespace gfxcpp

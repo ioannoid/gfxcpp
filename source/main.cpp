@@ -10,6 +10,15 @@ using namespace std;
 
 const int WIDTH = 800, HEIGHT = 600;
 float test = 0;
+float sub = 0.005f;
+int counter = 0;
+bool run = false;
+
+void on_key(int key, int scancode, int action, int mods) {
+    if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        run = !run;
+    }
+}
 
 int main() {
     engine game;
@@ -19,6 +28,7 @@ int main() {
     window.on_resize([&] (int width, int height) { 
         game.set_viewport(0, 0, width, height); 
     });
+    window.on_key(on_key);
 
     window.make_context_current();
     game.init_gl();
@@ -41,7 +51,14 @@ int main() {
 
             window.swap_buffers();
             window.poll_events();
-            test-=0.000001f;
+            if(run) {
+                test-=sub;
+                counter++;
+            }
+            if(run && counter == 100) {
+                counter = 0;
+                sub /= 2;
+            }
         }
 
         window.destroy();
